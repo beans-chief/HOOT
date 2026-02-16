@@ -18,8 +18,9 @@ export function Navbar() {
   ];
 
   const mediaLinks = [
-    { href: "/media", label: "Blog" },
-    { href: "/media", label: "News" },
+    { href: "/blog", label: "Blog" },
+    { href: "/hoot-news", label: "Hoot News" },
+    { href: "/publications", label: "Publications" },
   ];
 
   useEffect(() => {
@@ -72,17 +73,19 @@ export function Navbar() {
                 />
               </button>
               {isMediaOpen && (
-                <div className="absolute left-0 top-full mt-3 flex flex-col gap-1">
-                  {mediaLinks.map((link) => (
-                    <Link
-                      key={link.label}
-                      href={link.href}
-                      className="text-sm font-medium text-gray-700 transition-colors hover:text-[#166294]"
-                      onClick={() => setIsMediaOpen(false)}
-                    >
-                      {link.label}
-                    </Link>
-                  ))}
+                <div className="absolute left-0 top-full mt-2 min-w-40 rounded-lg border border-gray-200 bg-white px-4 py-3 shadow-lg">
+                  <div className="flex flex-col gap-2">
+                    {mediaLinks.map((link) => (
+                      <Link
+                        key={link.label}
+                        href={link.href}
+                        className="whitespace-nowrap text-sm font-medium text-gray-700 transition-colors hover:text-[#166294]"
+                        onClick={() => setIsMediaOpen(false)}
+                      >
+                        {link.label}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
               )}
             </div>

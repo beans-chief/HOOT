@@ -1,60 +1,83 @@
 "use client";
 
 import { Card } from "@/components/ui/card";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { motion } from "framer-motion";
+import Impact1 from "@/assets/impact-1.svg";
+import Impact2 from "@/assets/impact-2.svg";
+import Impact3 from "@/assets/impact-3.svg";
+import Impact4 from "@/assets/impact-4.svg";
+import Impact5 from "@/assets/impact-5.svg";
+import Impact6 from "@/assets/impact-6.svg";
 
 interface ImpactCard {
   number: string;
   label: string;
   description: string;
-  image: string;
+  image: StaticImageData;
 }
 
 const impactData: ImpactCard[] = [
   {
-    number: "1650+",
-    label: "Kits",
-    description: "Distributed to students across 5 communities",
-    image: "/api/placeholder/400/300",
+    number: "1550+ ",
+    label: "Girls",
+    description:
+      "reached through My Period, My Pride menstrual health and hygiene education",
+    image: Impact1,
   },
   {
     number: "100+",
     label: "Volunteers",
-    description: "Dedicated people making a difference",
-    image: "/api/placeholder/400/300",
+    description:
+      "engaged through the Tell Someone About it Awareness Campaign.",
+    image: Impact2,
   },
   {
     number: "2000+",
     label: "Books",
-    description: "Donated to school libraries",
-    image: "/api/placeholder/400/300",
+    description:
+      "reached through Mentorship And Personal Development sessions",
+    image: Impact3,
   },
   {
     number: "6000+",
     label: "Kids",
-    description: "Empowered through our programs",
-    image: "/api/placeholder/400/300",
+    description: "engaged through Rural Kids Connect Program",
+    image: Impact4,
   },
   {
     number: "50+",
     label: "Communities",
-    description: "Reached across the region",
-    image: "/api/placeholder/400/300",
+    description: "supported through the Ready for College program",
+    image: Impact5,
   },
   {
     number: "400+",
     label: "Projects",
-    description: "Successfully completed",
-    image: "/api/placeholder/400/300",
+    description:
+      "engaged through Antimicrobial Resistance (AMR) Awareness campaigns",
+    image: Impact6,
   },
 ];
+
+function highlightCaps(text: string) {
+  return text.split(" ").map((word, i) => {
+    const isCapitalized = /^[A-Z]/.test(word);
+    return (
+      <span
+        key={i}
+        className={isCapitalized ? "text-yellow-400 font-semibold" : ""}
+      >
+        {word}{" "}
+      </span>
+    );
+  });
+}
 
 export function ImpactSection() {
   return (
     <section id="our-impact" className="bg-transparent py-16 md:py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
         <div className="mb-12 text-center">
           <motion.h2
             className="mb-4 text-3xl font-medium text-[#0D6CB6] md:mb-8 md:text-5xl lg:text-7xl"
@@ -76,7 +99,7 @@ export function ImpactSection() {
               10,000+
             </span>
             <div className="inline-block rounded-lg px-4 py-2 md:px-6 md:py-3">
-              <span className="text-2xl font-medium text-[#1E3A5F] md:text-4xl lg:text-5xl">
+              <span className="text-2xl font-medium text-black md:text-4xl lg:text-4xl">
                 Young People &<br />
                 Communities
               </span>
@@ -84,7 +107,6 @@ export function ImpactSection() {
           </motion.div>
         </div>
 
-        {/* Impact Cards Grid */}
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {impactData.map((item, index) => (
             <motion.div
@@ -95,8 +117,7 @@ export function ImpactSection() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <Card className="group relative overflow-hidden rounded-2xl border-0 bg-gradient-to-br from-gray-900 to-gray-800 p-0 shadow-lg transition-transform hover:scale-105">
-                {/* Background Image */}
-                <div className="relative h-48 w-full overflow-hidden md:h-56">
+                <div className="relative h-60 w-full overflow-hidden md:h-56 lg:h-124">
                   <Image
                     src={item.image}
                     alt={item.label}
@@ -106,16 +127,16 @@ export function ImpactSection() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
                 </div>
 
-                {/* Content */}
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                  <div className="mb-2 text-4xl font-bold md:text-5xl">
+                  <div className="mb-2 flex items-center gap-2 text-4xl font-bold md:text-5xl">
                     {item.number}
+                    <span className="text-lg md:text-xl lg:text-xl">
+                      {item.label}
+                    </span>
                   </div>
-                  <div className="mb-1 text-xl font-semibold md:text-2xl">
-                    {item.label}
-                  </div>
-                  <p className="text-sm text-gray-300 md:text-base">
-                    {item.description}
+
+                  <p className="text-sm text-gray-300 md:text-lg">
+                    {highlightCaps(item.description)}
                   </p>
                 </div>
               </Card>
