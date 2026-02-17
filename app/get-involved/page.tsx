@@ -48,7 +48,7 @@ export default function GetInvolvedPage() {
                 Volunteer
               </button>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/hootafrica/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex w-full items-center justify-center gap-3 rounded-lg border-2 border-gray-400 px-8 py-4 text-sm font-semibold text-[#166294] transition-colors hover:border-[#166294] hover:bg-gray-50 md:text-base"

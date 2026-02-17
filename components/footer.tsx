@@ -59,7 +59,7 @@ export function Footer() {
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="transition-opacity hover:opacity-80">
               <Facebook size={22} />
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="transition-opacity hover:opacity-80">
+            <a href="https://www.instagram.com/hootafrica/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="transition-opacity hover:opacity-80">
               <Instagram size={22} />
             </a>
           </div>

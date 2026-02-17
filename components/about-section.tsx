@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import AboutUsImage from "@/assets/about-us-happy-girl-image.webp";
+import AboutUsImage from "@/assets/happy-girl-with-adorable-hair-smiling-Photoroom.jpg";
 import { motion } from "framer-motion";
 
 export function AboutSection() {
@@ -9,12 +9,12 @@ export function AboutSection() {
     <section id="about-us" className="bg-white py-10 md:py-24">
       <div className="relative w-full">
         {/* Background Image - Full Width */}
-        <div className="relative min-h-[600px] w-full overflow-hidden sm:min-h-[700px] md:min-h-[900px]">
+        <div className="group relative min-h-[600px] w-full overflow-hidden sm:min-h-[700px] md:min-h-[900px]">
           <Image
             src={AboutUsImage}
             alt="Happy girl representing HOOT Initiative"
             fill
-            className="object-cover"
+            className="object-cover grayscale transition-all duration-700 ease-in-out group-hover:grayscale-0 group-hover:scale-105"
           />
 
           {/* Overlay Content */}

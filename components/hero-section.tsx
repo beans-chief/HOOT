@@ -42,7 +42,7 @@ export function HeroSection() {
             src={heroImages[currentIndex].src}
             alt={heroImages[currentIndex].alt}
             fill
-            className="object-cover object-center"
+            className=" object-fill object-center"
             priority
           />
         </motion.div>
@@ -59,7 +59,7 @@ export function HeroSection() {
 
       {/* Content */}
       <div className="relative flex h-full items-end">
-        <div className="container mx-auto px-4 pb-12 sm:px-6 md:pb-20 lg:px-8 lg:pb-24">
+        <div className="container mx-auto px-4 pb-12 sm:px-6 md:pb-20 lg:px-32 lg:pb-24">
           <motion.div
             className="max-w-2xl space-y-6"
             initial={{ opacity: 0, y: 40 }}
@@ -94,7 +94,7 @@ export function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1, duration: 0.5 }}
             >
-              <Button size="lg" className="bg-[#6CAF48] px-8 text-base hover:bg-[#6CAF48]" asChild>
+              <Button size="lg" className="bg-[#F3A22D] px-8 text-base hover:bg-[#F3A22D]" asChild>
                 <Link href="/get-involved">Get Involved</Link>
               </Button>
               <Button

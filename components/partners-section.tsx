@@ -1,8 +1,20 @@
 "use client";
 
-import Image from "next/image";
-import Logo from "@/assets/logo.webp";
+import Image, { StaticImageData } from "next/image";
+import Anya from "@/assets/Anyahuma.jpg";
+import GraceLand from "@/assets/Graceland.jpg";
+import Zijag from "@/assets/zijag.jpg";
+import Accel from "@/assets/accel.jpg";
+import Amrr from "@/assets/amrr.jpg";
 import { motion } from "framer-motion";
+
+const partners: { name: string; logo: StaticImageData }[] = [
+  { name: "Anyahuma", logo: Anya },
+  { name: "Graceland", logo: GraceLand },
+  { name: "Zijag", logo: Zijag },
+  { name: "Accel", logo: Accel },
+  { name: "AMRR", logo: Amrr },
+];
 
 export function PartnersSection() {
   return (
@@ -19,15 +31,15 @@ export function PartnersSection() {
             Meet Our Partners
           </h3>
         </div>
-        <div className="flex flex-1 items-center justify-evenly gap-2 overflow-x-auto scrollbar-hide px-4 py-4 sm:gap-4 md:px-8 md:py-6">
-          {Array.from({ length: 9 }).map((_, i) => (
+        <div className="flex flex-1 items-center  bg-white justify-evenly gap-2 overflow-x-auto scrollbar-hide px-4 py-4 sm:gap-4 md:px-8 md:py-6">
+          {partners.map((partner) => (
             <div
-              key={i}
-              className="h-8 w-8 shrink-0 overflow-hidden sm:h-10 sm:w-10 md:h-14 md:w-14 lg:h-16 lg:w-16"
+              key={partner.name}
+              className="h-8 w-8 shrink-0 overflow-hidden sm:h-10 sm:w-10 md:h-14 md:w-14 lg:h-20 lg:w-20"
             >
               <Image
-                src={Logo}
-                alt={`Partner ${i + 1}`}
+                src={partner.logo}
+                alt={partner.name}
                 width={130}
                 height={130}
                 className="h-full w-full object-contain"
