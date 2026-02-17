@@ -3,72 +3,9 @@
 import { useState } from "react";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
-import { BlogCard, type BlogCardProps } from "@/components/blog-card";
+import { BlogCard, type SanityPost } from "@/components/blog-card";
 import Image, { StaticImageData } from "next/image";
 import { motion } from "framer-motion";
-
-const blogPosts: BlogCardProps[] = [
-  {
-    image: "/api/placeholder/400/300",
-    authorAvatar: "/api/placeholder/40/40",
-    authorName: "Author",
-    date: "Nov 29, 2024",
-    title: "Digital Declutter : Cutting the Noise in a...",
-    excerpt:
-      "In today's hyperconnected world, the lines between work, leisure and rest have blurred significantly. Notificati...",
-    slug: "digital-declutter",
-  },
-  {
-    image: "/api/placeholder/400/300",
-    authorAvatar: "/api/placeholder/40/40",
-    authorName: "Saarah Mcbride",
-    date: "Nov 29, 2024",
-    title: "Eco-Friendly Homes: The Future of Real Esta...",
-    excerpt:
-      "The real estate industry is undergoing a significant transformation as eco-friendly hom...",
-    slug: "eco-friendly-homes",
-  },
-  {
-    image: "/api/placeholder/400/300",
-    authorAvatar: "/api/placeholder/40/40",
-    authorName: "Cruz Mcintyre",
-    date: "Nov 29, 2024",
-    title: "A Foodie's Guide to Europe:...",
-    excerpt:
-      "Europe is a treasure trove of culinary delights, offering a diverse array of flavors, techniques, and traditions. F...",
-    slug: "foodie-guide-europe",
-  },
-  {
-    image: "/api/placeholder/400/300",
-    authorAvatar: "/api/placeholder/40/40",
-    authorName: "Amna",
-    date: "Nov 29, 2024",
-    title: "The Art of Black-and-White Photography",
-    excerpt:
-      "Black-and-white photography is a timeless art form that transcends trends and technology. By stripping...",
-    slug: "black-white-photography",
-  },
-  {
-    image: "/api/placeholder/400/300",
-    authorAvatar: "/api/placeholder/40/40",
-    authorName: "Clara Wilson",
-    date: "Nov 29, 2024",
-    title: "Sustainable Travel Tips: Reducing Your Carbon...",
-    excerpt:
-      "Practical advice for eco-conscious travelers to explore the world responsibly and sustainably.",
-    slug: "sustainable-travel-tips",
-  },
-  {
-    image: "/api/placeholder/400/300",
-    authorAvatar: "/api/placeholder/40/40",
-    authorName: "Sophia Turner",
-    date: "Nov 29, 2024",
-    title: "The Rise of Minimalist Interior Design",
-    excerpt:
-      "Learn how to create serene and functional spaces with the principles of minimalist interior design.",
-    slug: "minimalist-interior-design",
-  },
-];
 
 interface MediaPageLayoutProps {
   title: string;
@@ -76,16 +13,26 @@ interface MediaPageLayoutProps {
   images: [string, string];
   badgeTop: string | StaticImageData;
   badgeBottom: string | StaticImageData;
+  posts: SanityPost[];
+  basePath: string;
 }
 
-export function MediaPageLayout({ title, subtitle, images, badgeTop, badgeBottom }: MediaPageLayoutProps) {
+export function MediaPageLayout({
+  title,
+  subtitle,
+  images,
+  badgeTop,
+  badgeBottom,
+  posts,
+  basePath,
+}: MediaPageLayoutProps) {
   const [visibleCount, setVisibleCount] = useState(6);
-  const visiblePosts = blogPosts.slice(0, visibleCount);
+  const visiblePosts = posts.slice(0, visibleCount);
 
   return (
     <div className="min-h-screen bg-[#F3EEE7]">
       <Navbar />
-      <main>
+      <main className="pb-30" >
         {/* Hero Section */}
         <section className="relative overflow-hidden border-2 border-black bg-white">
           {/* Top teal bar */}
@@ -168,21 +115,27 @@ export function MediaPageLayout({ title, subtitle, images, badgeTop, badgeBottom
         {/* Blog Grid */}
         <section className="py-12 md:py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-10">
-              {visiblePosts.map((post, index) => (
-                <motion.div
-                  key={post.slug}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                >
-                  <BlogCard {...post} />
-                </motion.div>
-              ))}
-            </div>
+            {posts.length === 0 ? (
+              <p className="text-center text-gray-500 py-12">
+                No posts available yet. Check back soon!
+              </p>
+            ) : (
+              <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-10">
+                {visiblePosts.map((post, index) => (
+                  <motion.div
+                    key={post._id}
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                  >
+                    <BlogCard post={post} basePath={basePath} />
+                  </motion.div>
+                ))}
+              </div>
+            )}
 
             {/* Load More */}
-            {visibleCount < blogPosts.length && (
+            {visibleCount < posts.length && (
               <motion.div
                 className="my-12 flex justify-center"
                 initial={{ opacity: 0 }}
