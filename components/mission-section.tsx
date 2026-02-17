@@ -9,7 +9,7 @@ export function MissionSection() {
   const [isCardHovered, setIsCardHovered] = useState(false);
 
   return (
-    <section className="relative overflow-visible bg-transparent py-16 md:py-24">
+    <section className="relative overflow-hidden bg-transparent py-16 md:py-24">
       <div className="w-full">
         {/* Mission & Vision Cards */}
         <div className="relative z-10 w-full space-y-8">
@@ -65,7 +65,7 @@ export function MissionSection() {
 
       {/* Image - Hidden on mobile, visible on md+ */}
       <motion.div
-        className="absolute right-0 top-[47%] z-20 hidden -translate-y-1/2 md:block md:h-[700px] md:w-[450px] lg:h-[900px] lg:w-[650px]"
+        className={`absolute ${isCardHovered ? "bottom-15.5" :"bottom-10.5"} right-0 z-20 hidden md:block md:h-[700px] md:w-[450px] lg:h-[900px] lg:w-[650px]`}
         initial={{ opacity: 0, x: 80 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true, margin: "-100px" }}

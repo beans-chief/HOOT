@@ -42,7 +42,7 @@ export function HeroSection() {
             src={heroImages[currentIndex].src}
             alt={heroImages[currentIndex].alt}
             fill
-            className=" object-fill object-center"
+            className="object-cover object-center"
             priority
           />
         </motion.div>

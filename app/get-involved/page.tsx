@@ -110,44 +110,47 @@ export default function GetInvolvedPage() {
                 </button>
 
                 {/* Watermark text */}
-                <div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-between overflow-hidden py-6 text-white/10">
-                  <span className="text-4xl font-black tracking-widest md:text-5xl">
-                    THANK YOU THANK YOU
+                <div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-between overflow-hidden">
+                  <span
+                    className="-translate-y-1/2 text-6xl font-black tracking-widest text-transparent md:text-7xl"
+                    style={{ WebkitTextStroke: "1px rgba(255,255,255,0.15)" }}
+                  >
+                    THANK YOU
                   </span>
-                  <span className="text-4xl font-black tracking-widest md:text-5xl">
-                    THANK YOU THANK YOU
+                  <span
+                    className="translate-y-1/2 text-6xl font-black tracking-widest text-transparent md:text-7xl"
+                    style={{ WebkitTextStroke: "1px rgba(255,255,255,0.15)" }}
+                  >
+                    THANK YOU
                   </span>
                 </div>
 
-                {/* Green decorative elements */}
-                <div className="pointer-events-none absolute -bottom-10 left-1/2 h-32 w-32 -translate-x-1/2">
-                  <div className="h-full w-full rounded-lg bg-[#4CAF50]/20" />
-                </div>
-                <div className="pointer-events-none absolute -left-10 top-1/2 h-40 w-40 -translate-y-1/2">
-                  <div className="h-full w-full rounded-lg bg-[#4CAF50]/15" />
-                </div>
-                <div className="pointer-events-none absolute -right-10 top-1/3 h-40 w-40">
-                  <div className="h-full w-full rounded-lg bg-[#4CAF50]/15" />
-                </div>
 
                 {/* Bank details */}
-                <div className="relative z-10 space-y-8 pt-4">
-                  <div className="space-y-2 border-b border-white/30 pb-6">
-                    <p className="text-sm text-white/70">Bank</p>
-                    <p className="text-xl font-bold text-white md:text-2xl">
-                      KEY STONE BANK
-                    </p>
+                <div className="relative z-10 space-y-10 pt-4">
+                  <div className="border-b border-white/30 pb-4">
+                    <div className="flex items-center gap-4">
+                      <p className="text-lg font-semibold text-white md:text-xl">Bank</p>
+                      <span className="text-lg text-white md:text-xl">-</span>
+                      <p className="text-lg font-bold tracking-wide text-white md:text-xl">
+                        KEY STONE BANK
+                      </p>
+                    </div>
                   </div>
-                  <div className="space-y-2 border-b border-white/30 pb-6">
-                    <p className="text-sm text-white/70">Account Name</p>
-                    <p className="text-xl font-bold text-white md:text-2xl">
-                      HOOT AFRICA
-                    </p>
+                  <div className="border-b border-white/30 pb-4">
+                    <div className="flex items-center gap-4">
+                      <p className="text-lg font-semibold text-white md:text-xl">Account Name</p>
+                      <span className="text-lg text-white md:text-xl">-</span>
+                      <p className="text-lg font-bold tracking-wide text-white md:text-xl">
+                        HOOT AFRICA
+                      </p>
+                    </div>
                   </div>
-                  <div className="space-y-2 border-b border-white/30 pb-6">
-                    <p className="text-sm text-white/70">Account Number</p>
-                    <div className="flex items-center gap-3">
-                      <p className="text-xl font-bold text-white md:text-2xl">
+                  <div className="border-b border-white/30 pb-4">
+                    <div className="flex items-center gap-4">
+                      <p className="text-lg font-semibold text-white md:text-xl">Account Number</p>
+                      <span className="text-lg text-white md:text-xl">-</span>
+                      <p className="text-lg font-bold tracking-wide text-white md:text-xl">
                         1013511394
                       </p>
                       <button
@@ -155,7 +158,7 @@ export default function GetInvolvedPage() {
                         className="rounded-md p-1.5 text-white/70 transition-colors hover:bg-white/10 hover:text-white"
                         aria-label="Copy account number"
                       >
-                        {copied ? <Check size={20} /> : <Copy size={20} />}
+                        {copied ? <Check size={20} /> : <Copy  stroke="#ffff" size={20} />}
                       </button>
                     </div>
                   </div>
