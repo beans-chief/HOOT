@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import JoinMovementImage from "@/assets/join-movement-image.svg";
+import JoinMovementImage from "@/assets/join-movement-image.webp";
 import { motion } from "framer-motion";
 
 export function JoinMovementSection() {

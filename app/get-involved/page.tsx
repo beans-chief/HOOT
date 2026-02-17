@@ -4,10 +4,10 @@ import { useState } from "react";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import Image from "next/image";
-import Logo from "@/assets/logo.svg";
+import Logo from "@/assets/logo.webp";
 import { Instagram, Copy, Check, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import GetInvolvedIMage from "@/assets/donate-picture.svg";
+import GetInvolvedIMage from "@/assets/donate-picture.webp";
 import GreenBadge from "@/assets/green-badge.png"
 import WhiteBadge from "@/assets/white badge.png"
 type ModalType = "donate" | "volunteer" | null;

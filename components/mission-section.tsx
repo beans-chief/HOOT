@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import MissionImage from "@/assets/mission-boy-wth-plane-image.svg";
+import MissionImage from "@/assets/mission-boy-wth-plane-image.webp";
 import { motion } from "framer-motion";
 
 export function MissionSection() {

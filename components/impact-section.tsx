@@ -3,12 +3,12 @@
 import { Card } from "@/components/ui/card";
 import Image, { StaticImageData } from "next/image";
 import { motion } from "framer-motion";
-import Impact1 from "@/assets/impact-1.svg";
-import Impact2 from "@/assets/impact-2.svg";
-import Impact3 from "@/assets/impact-3.svg";
-import Impact4 from "@/assets/impact-4.svg";
-import Impact5 from "@/assets/impact-5.svg";
-import Impact6 from "@/assets/impact-6.svg";
+import Impact1 from "@/assets/impact-1.webp";
+import Impact2 from "@/assets/impact-2.webp";
+import Impact3 from "@/assets/impact-3.webp";
+import Impact4 from "@/assets/impact-4.webp";
+import Impact5 from "@/assets/impact-5.webp";
+import Impact6 from "@/assets/impact-6.webp";
 
 interface ImpactCard {
   number: string;

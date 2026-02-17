@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Facebook, Instagram, Linkedin } from "lucide-react";
-import Logo from "@/assets/logo.svg";
+import Logo from "@/assets/logo.webp";
 import { motion } from "framer-motion";
 
 export function Footer() {

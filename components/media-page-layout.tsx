@@ -10,7 +10,7 @@ import { motion } from "framer-motion";
 interface MediaPageLayoutProps {
   title: string;
   subtitle: string;
-  images: [string, string];
+  images: [string | StaticImageData, string | StaticImageData];
   badgeTop: string | StaticImageData;
   badgeBottom: string | StaticImageData;
   posts: SanityPost[];

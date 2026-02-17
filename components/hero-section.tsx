@@ -4,9 +4,9 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
-import HeroImage from "@/assets/hero-image.svg";
-import HeroImage2 from "@/assets/hero-image-2.svg";
-import HeroImage3 from "@/assets/hero-image-3.svg";
+import HeroImage from "@/assets/hero-image.webp";
+import HeroImage2 from "@/assets/hero-image-2.webp";
+import HeroImage3 from "@/assets/hero-image-3.webp";
 
 import { motion, AnimatePresence } from "framer-motion";
 

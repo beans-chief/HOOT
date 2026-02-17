@@ -5,11 +5,11 @@ import Image, { StaticImageData } from "next/image";
 import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-import Program1 from "@/assets/program-1.svg";
-import Program2 from "@/assets/program-2.svg";
-import Program3 from "@/assets/program-3.svg";
-import Program4 from "@/assets/program-4.svg";
-import Program5 from "@/assets/program5.svg";
+import Program1 from "@/assets/program-1.webp";
+import Program2 from "@/assets/program-2.webp";
+import Program3 from "@/assets/program-3.webp";
+import Program4 from "@/assets/program-4.webp";
+import Program5 from "@/assets/program5.webp";
 
 interface Program {
   tagline: string;

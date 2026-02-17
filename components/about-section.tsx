@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import AboutUsImage from "@/assets/about-us-happy-girl-image.svg";
+import AboutUsImage from "@/assets/about-us-happy-girl-image.webp";
 import { motion } from "framer-motion";
 
 export function AboutSection() {

@@ -5,7 +5,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
-import Logo from "../assets/logo.svg";
+import Logo from "@/assets/logo.webp";
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMediaOpen, setIsMediaOpen] = useState(false);

@@ -1,6 +1,6 @@
 import { MediaPageLayout } from "@/components/media-page-layout";
-import BlogImage1 from "@/assets/blog-1.svg";
-import BlogImage2 from "@/assets/blog-2.svg";
+import BlogImage1 from "@/assets/blog-1.webp";
+import BlogImage2 from "@/assets/blog-2.webp";
 import OrangeBadgeTop from "@/assets/orange-badge-top.svg";
 import GreenBadgeBottom from "@/assets/green-badge-bottom.svg";
 import { sanityFetch } from "@/sanity/lib/client";
