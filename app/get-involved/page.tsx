@@ -15,11 +15,34 @@ type ModalType = "donate" | "volunteer" | null;
 export default function GetInvolvedPage() {
   const [activeModal, setActiveModal] = useState<ModalType>(null);
   const [copied, setCopied] = useState(false);
+  const [form, setForm] = useState({ name: "", email: "", whatsapp: "", skills: "" });
+  const [submitting, setSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
 
   const copyAccountNumber = () => {
     navigator.clipboard.writeText("1013511394");
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
+  };
+
+  const handleVolunteerSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitting(true);
+    setSubmitStatus("idle");
+    try {
+      const res = await fetch("/api/volunteer", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) throw new Error("Failed");
+      setSubmitStatus("success");
+      setForm({ name: "", email: "", whatsapp: "", skills: "" });
+    } catch {
+      setSubmitStatus("error");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -198,33 +221,55 @@ export default function GetInvolvedPage() {
                 <div className="pointer-events-none absolute -right-10 bottom-1/4 h-80 w-4 -rotate-45 bg-[#E63946]" />
 
                 {/* Form */}
-                <form className="relative z-10 space-y-5" onSubmit={(e) => e.preventDefault()}>
+                <form className="relative z-10 space-y-5" onSubmit={handleVolunteerSubmit}>
                   <input
                     type="text"
                     placeholder="Enter your name"
+                    required
+                    value={form.name}
+                    onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
                     className="w-full rounded-lg bg-white px-6 py-3.5 text-sm text-gray-700 placeholder-gray-400 outline-none focus:ring-2 focus:ring-white/50 md:text-base"
                   />
                   <input
                     type="email"
                     placeholder="Enter your email address"
+                    required
+                    value={form.email}
+                    onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
                     className="w-full rounded-lg bg-white px-6 py-3.5 text-sm text-gray-700 placeholder-gray-400 outline-none focus:ring-2 focus:ring-white/50 md:text-base"
                   />
                   <input
                     type="tel"
                     placeholder="Enter your whatsapp number"
+                    required
+                    value={form.whatsapp}
+                    onChange={(e) => setForm((f) => ({ ...f, whatsapp: e.target.value }))}
                     className="w-full rounded-lg bg-white px-6 py-3.5 text-sm text-gray-700 placeholder-gray-400 outline-none focus:ring-2 focus:ring-white/50 md:text-base"
                   />
                   <input
                     type="text"
                     placeholder="Tell us what skills you have (optional)"
+                    value={form.skills}
+                    onChange={(e) => setForm((f) => ({ ...f, skills: e.target.value }))}
                     className="w-full rounded-lg bg-white px-6 py-3.5 text-sm text-gray-700 placeholder-gray-400 outline-none focus:ring-2 focus:ring-white/50 md:text-base"
                   />
+                  {submitStatus === "success" && (
+                    <p className="text-center text-sm font-medium text-white">
+                      Thank you! We&apos;ll be in touch soon.
+                    </p>
+                  )}
+                  {submitStatus === "error" && (
+                    <p className="text-center text-sm font-medium text-red-200">
+                      Something went wrong. Please try again.
+                    </p>
+                  )}
                   <div className="pt-2 text-center">
                     <button
                       type="submit"
-                      className="rounded-lg bg-white px-10 py-3 text-sm font-semibold text-[#4CAF50] transition-transform hover:scale-105 md:text-base"
+                      disabled={submitting}
+                      className="rounded-lg bg-white px-10 py-3 text-sm font-semibold text-[#4CAF50] transition-transform hover:scale-105 disabled:opacity-60 disabled:cursor-not-allowed md:text-base"
                     >
-                      Submit
+                      {submitting ? "Submitting..." : "Submit"}
                     </button>
                   </div>
                 </form>

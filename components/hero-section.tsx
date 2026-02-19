@@ -102,7 +102,7 @@ export function HeroSection() {
                 variant="outline"
                 className="border-2 border-white bg-transparent px-8 text-base text-white hover:bg-white/10"
               >
-                Donate
+                <Link href="/get-involved">Donate</Link>
               </Button>
             </motion.div>
           </motion.div>

@@ -36,9 +36,9 @@ export function MediaPageLayout({
         {/* Hero Section */}
         <section className="relative overflow-hidden border-2 border-black bg-white">
           {/* Top teal bar */}
-          <div className="h-1.5 w-full bg-[#166294]" />
+          <div className="h-0.4 w-full bg-[#166294]" />
 
-          <div className="relative container mx-auto px-4 py-12 sm:px-6 md:py-16 lg:px-8">
+          <div className="relative container mx-auto px-4 py-6 sm:px-6 md:py-8 lg:px-8">
             {/* Badge - top right */}
             <div className="absolute right-4 -top-2 h-12 w-12 -rotate-6 md:right-12 md:-top-4 md:h-20 md:w-20">
               <Image
