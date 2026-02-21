@@ -100,7 +100,7 @@ export function HeroSection() {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-2 border-white bg-transparent px-8 text-base text-white hover:bg-white/10"
+                className="border-2 border-white bg-transparent px-8 text-base text-white hover:bg-white hover:text-black"
               >
                 <Link href="/get-involved">Donate</Link>
               </Button>

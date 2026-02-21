@@ -80,7 +80,7 @@ export function ImpactSection() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-12 text-center">
           <motion.h2
-            className="mb-4 text-3xl font-medium text-[#0D6CB6] md:mb-8 md:text-5xl lg:text-7xl"
+            className="mb-4 text-3xl font-bold text-[#0D6CB6] md:mb-8 md:text-5xl lg:text-7xl"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}

@@ -25,6 +25,7 @@ export function Navbar() {
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
+      e.preventDefault();
       if (mediaRef.current && !mediaRef.current.contains(e.target as Node)) {
         setIsMediaOpen(false);
       }
@@ -148,10 +149,6 @@ export function Navbar() {
                       key={link.label}
                       href={link.href}
                       className="text-sm text-gray-600 transition-colors hover:text-[#166294]"
-                      onClick={() => {
-                        setIsMediaOpen(false);
-                        setIsMenuOpen(false);
-                      }}
                     >
                       {link.label}
                     </Link>

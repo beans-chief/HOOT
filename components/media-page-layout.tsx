@@ -50,7 +50,7 @@ export function MediaPageLayout({
             </div>
 
             {/* Decorative image - left */}
-            <div className="absolute left-8 top-1/2 -translate-y-1/2 -rotate-12 md:left-20 lg:left-32">
+            <div className=" hidden lg:block absolute left-8 top-1/2 -translate-y-1/2 -rotate-12 md:left-20 lg:left-32">
               <div className="relative h-20 w-20 overflow-hidden rounded-2xl md:h-28 md:w-28">
                 <Image
                   src={images[0]}
@@ -62,7 +62,7 @@ export function MediaPageLayout({
             </div>
 
             {/* Decorative image - right */}
-            <div className="absolute right-8 top-1/2 -translate-y-1/4 rotate-12 md:right-20 lg:right-32">
+            <div className=" hidden lg:block absolute right-8 top-1/2 -translate-y-1/4 rotate-12 md:right-20 lg:right-32">
               <div className="relative h-20 w-20 overflow-hidden rounded-2xl  md:h-28 md:w-28">
                 <Image
                   src={images[1]}
