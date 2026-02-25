@@ -1,4 +1,17 @@
+import type { Metadata } from "next";
 import { MediaPageLayout } from "@/components/media-page-layout";
+
+export const metadata: Metadata = {
+  title: "Media",
+  description:
+    "Browse media coverage, press releases, and news features about HOOT Initiative and our work across Nigeria and Africa.",
+  openGraph: {
+    title: "Media | HOOT Initiative",
+    description:
+      "Browse media coverage, press releases, and news features about HOOT Initiative and our work across Nigeria and Africa.",
+    type: "website",
+  },
+};
 import BlogImage1 from "@/assets/blog-1.webp";
 import BlogImage2 from "@/assets/blog-2.webp";
 import OrangeBadgeTop from "@/assets/orange-badge-top.svg";

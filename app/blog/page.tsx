@@ -1,4 +1,17 @@
+import type { Metadata } from "next";
 import { MediaPageLayout } from "@/components/media-page-layout";
+
+export const metadata: Metadata = {
+  title: "Blog",
+  description:
+    "Read the latest articles and stories from HOOT Initiative on youth empowerment, community development, and sustainable change.",
+  openGraph: {
+    title: "Blog | HOOT Initiative",
+    description:
+      "Read the latest articles and stories from HOOT Initiative on youth empowerment, community development, and sustainable change.",
+    type: "website",
+  },
+};
 import BlogImage1 from "@/assets/blog-1.webp";
 import BlogImage2 from "@/assets/blog-2.webp";
 import GreenBadgeTop from "@/assets/orange-badge-top.svg";

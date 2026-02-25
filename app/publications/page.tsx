@@ -1,4 +1,17 @@
+import type { Metadata } from "next";
 import { MediaPageLayout } from "@/components/media-page-layout";
+
+export const metadata: Metadata = {
+  title: "Publications",
+  description:
+    "Explore research, reports, and publications from HOOT Initiative on youth development, community empowerment, and sustainable growth in Africa.",
+  openGraph: {
+    title: "Publications | HOOT Initiative",
+    description:
+      "Explore research, reports, and publications from HOOT Initiative on youth development, community empowerment, and sustainable growth in Africa.",
+    type: "website",
+  },
+};
 import BlogImage1 from "@/assets/blog-1.webp";
 import BlogImage2 from "@/assets/blog-2.webp";
 import OrangeBadgeTop from "@/assets/blue-badge-top.svg";

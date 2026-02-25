@@ -15,10 +15,63 @@ const poppins = localFont({
   ],
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+
 export const metadata: Metadata = {
-  title: "HOOT Initiative - Empowering Children, Youths and Communities",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "HOOT Initiative - Empowering Children, Youths and Communities",
+    template: "%s | HOOT Initiative",
+  },
   description:
     "HOOT Initiative is a youth-led NGO committed to empowering young people and communities through innovative programs and sustainable development initiatives.",
+  keywords: [
+    "HOOT Initiative",
+    "NGO",
+    "youth empowerment",
+    "community development",
+    "Nigeria",
+    "Africa",
+    "children",
+    "sustainable development",
+  ],
+  authors: [{ name: "HOOT Initiative" }],
+  creator: "HOOT Initiative",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: siteUrl,
+    siteName: "HOOT Initiative",
+    title: "HOOT Initiative - Empowering Children, Youths and Communities",
+    description:
+      "HOOT Initiative is a youth-led NGO committed to empowering young people and communities through innovative programs and sustainable development initiatives.",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "HOOT Initiative - Empowering Children, Youths and Communities",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "HOOT Initiative - Empowering Children, Youths and Communities",
+    description:
+      "HOOT Initiative is a youth-led NGO committed to empowering young people and communities through innovative programs and sustainable development initiatives.",
+    images: ["/opengraph-image"],
+    creator: "@hootafrica",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export default function RootLayout({
