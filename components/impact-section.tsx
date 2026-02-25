@@ -34,7 +34,7 @@ const impactData: ImpactCard[] = [
   },
   {
     number: "2000+",
-    label: "Books",
+    label: "Children & Youth",
     description:
       "reached through Mentorship And Personal Development sessions",
     image: Impact3,
@@ -47,13 +47,13 @@ const impactData: ImpactCard[] = [
   },
   {
     number: "50+",
-    label: "Communities",
+    label: "Students",
     description: "supported through the Ready for College program",
     image: Impact5,
   },
   {
     number: "400+",
-    label: "Projects",
+    label: "Community Members",
     description:
       "engaged through Antimicrobial Resistance (AMR) Awareness campaigns",
     image: Impact6,
