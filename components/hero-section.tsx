@@ -5,8 +5,8 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
 import HeroImage from "@/assets/hero-image.webp";
-import HeroImage2 from "@/assets/hero-image-2.webp";
-import HeroImage3 from "@/assets/hero-image-3.webp";
+import HeroImage2 from "@/assets/hero-image-2.jpg";
+import HeroImage3 from "@/assets/hero-image-3.jpg";
 
 import { motion, AnimatePresence } from "framer-motion";
 
