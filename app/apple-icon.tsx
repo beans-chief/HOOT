@@ -6,8 +6,8 @@ export const size = { width: 180, height: 180 };
 export const contentType = "image/png";
 
 export default async function AppleIcon() {
-  const logoData = await readFile(join(process.cwd(), "assets", "logo.webp"));
-  const logoSrc = `data:image/webp;base64,${logoData.toString("base64")}`;
+  const logoData = await readFile(join(process.cwd(), "assets", "logo.png"));
+  const logoSrc = `data:image/png;base64,${logoData.toString("base64")}`;
 
   return new ImageResponse(
     (
