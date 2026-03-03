@@ -10,6 +10,7 @@ import Program2 from "@/assets/program-2.webp";
 import Program3 from "@/assets/program-3.webp";
 import Program4 from "@/assets/program-4.webp";
 import Program5 from "@/assets/program5.webp";
+import Program6 from "@/assets/program-6.jpg";
 
 interface Program {
   tagline: string;
@@ -42,6 +43,11 @@ const programs: Program[] = [
     tagline: "Knowledge that protects. Awareness that saves lives.",
     description: "A health education initiative focused on raising awareness about antimicrobial resistance, breast cancer, cervical cancer and other critical public health issues.",
     image: Program5,
+  },
+  {
+    tagline: "Knowledge that protects. Awareness that saves lives.",
+    description: "A health education initiative focused on raising awareness about antimicrobial resistance, breast cancer, cervical cancer and other critical public health issues.",
+    image: Program6,
   },
 ];
 

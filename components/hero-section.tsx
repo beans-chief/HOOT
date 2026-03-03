@@ -7,12 +7,14 @@ import Image from "next/image";
 import HeroImage from "@/assets/hero-image.webp";
 import HeroImage2 from "@/assets/hero-image-2.jpg";
 import HeroImage3 from "@/assets/hero-image-3.jpg";
+import HeroImage4 from "@/assets/hero-image-4.jpg";
 
 import { motion, AnimatePresence } from "framer-motion";
 
 const heroImages = [
   { src: HeroImage, alt: "Children learning together" },
   { src: HeroImage2, alt: "Happy girl representing HOOT Initiative" },
+  { src: HeroImage4, alt: "Women empowered by HOOT Initiative" },
   { src: HeroImage3, alt: "Boy with plane representing our mission" },
 ];
 
@@ -77,11 +79,16 @@ export function HeroSection() {
               <span
                 className={`transition-colors duration-500 underline-offset-4 ${currentIndex === 1 ? "text-[#F5A623] underline decoration-[#F5A623]" : ""}`}
               >
-                Youths
+                Youths,
+              </span>{" "}
+              <span
+                className={`transition-colors duration-500 underline-offset-4 ${currentIndex === 2 ? "text-[#F5A623] underline decoration-[#F5A623]" : ""}`}
+              >
+                Women
               </span>{" "}
               and{" "}
               <span
-                className={`transition-colors duration-500 underline-offset-4 ${currentIndex === 2 ? "text-[#F5A623] underline decoration-[#F5A623]" : ""}`}
+                className={`transition-colors duration-500 underline-offset-4 ${currentIndex === 3 ? "text-[#F5A623] underline decoration-[#F5A623]" : ""}`}
               >
                 Communities
               </span>
