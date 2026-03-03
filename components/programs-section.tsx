@@ -45,8 +45,8 @@ const programs: Program[] = [
     image: Program5,
   },
   {
-    tagline: "Knowledge that protects. Awareness that saves lives.",
-    description: "A health education initiative focused on raising awareness about antimicrobial resistance, breast cancer, cervical cancer and other critical public health issues.",
+    tagline: "A project designed as a major intervention to raise the quality of life of young rural women.",
+    description: "The project created a strong and viable opportunity for 20 young rural women between the age of 21-35 to be educated, mentored, empowered and developed in capacity and skills",
     image: Program6,
   },
 ];
